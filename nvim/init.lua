@@ -686,16 +686,17 @@ do
   --  See `:help lsp-config` for information about keys and how to configure
   ---@type table<string, vim.lsp.Config>
   local servers = {
-    -- clangd = {},
-    -- gopls = {},
-    -- pyright = {},
-    -- rust_analyzer = {},
-    --
-    -- Some languages (like typescript) have entire language plugins that can be useful:
-    --    https://github.com/pmizio/typescript-tools.nvim
-    --
-    -- But for many setups, the LSP (`ts_ls`) will work just fine
-    -- ts_ls = {},
+    -- Common LSPs auto-installed on first launch via mason-tool-installer.
+    -- Uncomment / add others as needed.
+    pyright   = {},  -- Python
+    ts_ls     = {},  -- TypeScript / JavaScript
+    bashls    = {},  -- Bash / shell
+    jsonls    = {},  -- JSON
+    yamlls    = {},  -- YAML
+    marksman  = {},  -- Markdown
+    -- clangd       = {},  -- C / C++
+    -- gopls        = {},  -- Go
+    -- rust_analyzer = {}, -- Rust
 
     stylua = {}, -- Used to format Lua code
 
@@ -753,7 +754,8 @@ do
   -- You can press `g?` for help in this menu.
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
-    -- You can add other tools here that you want Mason to install
+    'prettier', -- formatter for JS/TS/JSON/YAML/Markdown/CSS/HTML
+    'shfmt',    -- formatter for shell scripts
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
