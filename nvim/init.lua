@@ -690,7 +690,7 @@ do
     -- Uncomment / add others as needed.
     pyright   = {},  -- Python
     ts_ls     = {},  -- TypeScript / JavaScript
-    bashls    = {},  -- Bash / shell
+    bashls    = { filetypes = { 'sh', 'bash', 'zsh' } },  -- Bash / shell (extended to zsh)
     jsonls    = {},  -- JSON
     yamlls    = {},  -- YAML
     marksman  = {},  -- Markdown
