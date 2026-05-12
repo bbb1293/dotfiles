@@ -1,0 +1,73 @@
+# dotfiles
+
+Personal config for **tmux** + **Neovim**, optimized for parallel Claude Code sessions.
+
+- `tmux.conf` — tmux 3.6+ with 7 plugins (sessionx, resurrect/continuum, thumbs, …)
+- `nvim/` — Neovim 0.12+ fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with vim-tmux-navigator
+
+See [CHEATSHEET.md](./CHEATSHEET.md) for the keys you'll actually use day-to-day.
+
+---
+
+## Install on a fresh Mac
+
+### 1. Prerequisites (Homebrew)
+
+```bash
+brew install tmux neovim fzf bat ripgrep fd zoxide rust tree-sitter
+npm install -g tree-sitter-cli
+```
+
+### 2. Clone this repo
+
+```bash
+git clone https://github.com/bbb1293/dotfiles ~/dotfiles
+```
+
+### 3. Run the installer
+
+```bash
+~/dotfiles/install.sh
+```
+
+This symlinks:
+- `~/.tmux.conf` → `~/dotfiles/tmux.conf`
+- `~/.config/nvim` → `~/dotfiles/nvim`
+
+### 4. Install tmux plugins (TPM)
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
+# Build tmux-thumbs binary (Apple Silicon: no prebuilt arm64 release)
+cd ~/.tmux/plugins/tmux-thumbs && cargo build --release
+```
+
+### 5. Install Neovim plugins
+
+First launch of `nvim` auto-installs everything via `vim.pack.add`. Then:
+
+```vim
+:TSInstall lua python javascript typescript json yaml markdown bash
+:Mason       " install language servers
+```
+
+---
+
+## Layout
+
+```
+dotfiles/
+├── README.md
+├── CHEATSHEET.md      ← daily-use keys
+├── install.sh         ← symlink installer
+├── tmux.conf          ← → ~/.tmux.conf
+└── nvim/              ← → ~/.config/nvim
+    ├── init.lua
+    └── lua/custom/plugins/
+        └── tmux-navigator.lua
+```
+
+## Credits
+
+- nvim base: [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (MIT)
