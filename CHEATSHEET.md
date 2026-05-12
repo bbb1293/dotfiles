@@ -92,8 +92,31 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 | `<Space>sc` | Search commands |
 | `<Space>sn` | Search Neovim config files |
 | `<Space>sr` | Resume last Telescope picker |
-| `\` (backslash) | Reveal current file in neo-tree |
-| `:Neotree toggle` | Toggle file tree |
+
+### File tree (neo-tree) ⭐
+
+Auto-opens on the left at startup. Press `?` inside the tree to see every key.
+
+| Keys | Action |
+|---|---|
+| `\` (any buffer) | Toggle / reveal current file in tree |
+| `<C-h>` / `<C-l>` | Focus tree / focus editor |
+| `<CR>` or `l` | Open file / expand folder |
+| `h` | Collapse folder (or jump to parent) |
+| `s` / `S` | Open file in **horizontal** / **vertical** split |
+| `t` | Open in new tab |
+| `R` | Refresh tree |
+| `H` | Toggle hidden files (dotfiles) |
+| `/` | Live-filter visible nodes (`<Esc>` clears) |
+| `a` | **Add** file (end name with `/` to make a folder) |
+| `A` | Add directory |
+| `d` | **Delete** (confirms) |
+| `r` | **Rename** |
+| `m` / `c` | Move / Copy to… (prompts for destination) |
+| `y` / `x` / `p` | Yank / cut / paste node |
+| `Y` | Copy filename / path to system clipboard |
+| `<` / `>` | Prev / next source — filesystem ↔ buffers ↔ git_status |
+| `?` | Show all keymaps |
 
 ### LSP (after `:Mason` installs servers)
 
@@ -162,7 +185,7 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 
 ## Tiered cheat — memorize in this order
 
-### Tier 1 — Survival (11 keys)
+### Tier 1 — Survival (12 keys)
 *You can work without referencing anything else. Memorize these first.*
 
 ```
@@ -171,18 +194,19 @@ prefix o          ⭐ switch project (sessionx)
 prefix d          detach (KEY habit — keeps Claude running)
 prefix c          new window
 prefix | / -      split pane vertical / horizontal
-Ctrl+h/j/k/l      move between panes (and into nvim)
+Ctrl+h/j/k/l      move between panes (and into nvim/tree)
 
-# nvim (6)
+# nvim (7)
 <Space>sf         find file
 <Space>sg         grep across project
 grd               goto definition
+<CR> or l         (in tree) open file / expand folder
 :w / :q           save / quit
 u                 undo
 <Esc>             escape any mode
 ```
 
-### Tier 2 — Fluent (+10 keys)
+### Tier 2 — Fluent (+13 keys)
 *You reach for these multiple times a day. Add them once Tier 1 is automatic.*
 
 ```
@@ -194,13 +218,41 @@ prefix r          reload config after editing tmux.conf
 
 # nvim (+6)
 <Space><Space>    open buffer list
-\                 reveal current file in neo-tree
+\                 toggle tree / re-reveal current file
 K                 hover docs under cursor
 grn               rename symbol (LSP refactor)
 gra               code action (LSP quick-fix)
 gcc               comment line (visual: gc on selection)
+
+# neo-tree, focused in tree (+3)
+a                 add file (end name with / to make a folder)
+d                 delete (asks to confirm)
+r                 rename
+```
+
+### Tier 3 — Power-user (+12 keys)
+*Less than daily, but huge leverage when the task calls for them.*
+
+```
+# tmux (+4)
+prefix z          zoom pane to fullscreen (toggle)
+prefix ,          rename current window
+prefix H/J/K/L    resize pane (repeatable)
+prefix Tab        toggle to last session
+
+# nvim (+6)
+grr               find references (refactor scoping)
+gO                document symbols (jump within file)
+<Space>sw         grep word under cursor
+<Space>/          fuzzy-find within current buffer
+<Space>f          format buffer (conform.nvim)
+ysiw" / ds"       surround/un-surround with " (mini.surround)
+
+# neo-tree, focused in tree (+2)
+s / S             open file in horizontal / vertical split
+< / >             switch source: files ↔ buffers ↔ git status
 ```
 
 > Everything else lives in the tables above — reach for it when you need it, don't memorize it.
 
-Memorize these first. Everything else can come later.
+**Self-check by tier:** *"Can I work for an hour without looking at this section?"* If yes, you've internalized that tier.
