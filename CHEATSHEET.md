@@ -160,33 +160,47 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 
 ---
 
-## The 21 keys that cover 80% of usage
+## Tiered cheat — memorize in this order
+
+### Tier 1 — Survival (11 keys)
+*You can work without referencing anything else. Memorize these first.*
 
 ```
-# tmux
+# tmux (5)
 prefix o          ⭐ switch project (sessionx)
-prefix d          detach (KEY habit — don't kill the terminal)
+prefix d          detach (KEY habit — keeps Claude running)
 prefix c          new window
-prefix 1..9       jump window
-prefix | / -      split
-Ctrl+h/j/k/l      move between everything
-prefix [          scroll/copy mode  (q to exit)
-prefix Space      hint-copy URL/path
-prefix r          reload config
+prefix | / -      split pane vertical / horizontal
+Ctrl+h/j/k/l      move between panes (and into nvim)
 
-# nvim
+# nvim (6)
 <Space>sf         find file
 <Space>sg         grep across project
-<Space><Space>    open buffers
-\                 reveal file in neo-tree
-grd               go to definition
-K                 docs under cursor
-grn               rename symbol
-gra               code action
-gcc               comment line
+grd               goto definition
 :w / :q           save / quit
 u                 undo
 <Esc>             escape any mode
 ```
+
+### Tier 2 — Fluent (+10 keys)
+*You reach for these multiple times a day. Add them once Tier 1 is automatic.*
+
+```
+# tmux (+4)
+prefix 1..9       jump to window N
+prefix [          enter scroll/copy mode (q to exit)
+prefix Space      hint-copy URL/path from screen
+prefix r          reload config after editing tmux.conf
+
+# nvim (+6)
+<Space><Space>    open buffer list
+\                 reveal current file in neo-tree
+K                 hover docs under cursor
+grn               rename symbol (LSP refactor)
+gra               code action (LSP quick-fix)
+gcc               comment line (visual: gc on selection)
+```
+
+> Everything else lives in the tables above — reach for it when you need it, don't memorize it.
 
 Memorize these first. Everything else can come later.
