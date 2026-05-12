@@ -82,44 +82,61 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 |---|---|
 | `<Space>sf` | **Search files** (fuzzy by name) |
 | `<Space>sg` | **Search by grep** (live ripgrep) |
-| `<Space>?` | Recently opened files |
+| `<Space>sw` | Search current word under cursor |
+| `<Space>/` | Fuzzy search in **current buffer** |
+| `<Space>s/` | Live grep across **open buffers** only |
+| `<Space>s.` | Recently opened files |
 | `<Space><Space>` | Open buffers |
 | `<Space>sh` | Search help docs |
 | `<Space>sk` | Search keymaps |
-| `<Space>e` | Toggle file tree (neo-tree) |
+| `<Space>sc` | Search commands |
+| `<Space>sn` | Search Neovim config files |
+| `<Space>sr` | Resume last Telescope picker |
+| `\` (backslash) | Reveal current file in neo-tree |
+| `:Neotree toggle` | Toggle file tree |
 
 ### LSP (after `:Mason` installs servers)
 
+> Note: this kickstart uses Neovim 0.11+ `gr*` convention (not `<leader>r*`).
+
 | Keys | Action |
 |---|---|
-| `gd` | Go to definition |
-| `gr` | Find references |
-| `K` | Show docs under cursor |
-| `<Space>rn` | Rename symbol |
-| `<Space>ca` | Code action |
-| `<Space>ds` | Document symbols |
+| `grd` | **G**oto **D**efinition |
+| `grr` | Find **R**eferences |
+| `gri` | Goto **I**mplementation |
+| `grt` | Goto **T**ype Definition |
+| `grn` | Re**n**ame symbol |
+| `gra` | Code **A**ction |
+| `gO` | Document symbols (current file) |
+| `gW` | Workspace symbols (all files) |
+| `K` | Hover docs under cursor |
 | `[d` / `]d` | Previous / next diagnostic |
 | `<Space>q` | Diagnostic quickfix list |
+| `<Space>sd` | Search diagnostics (Telescope) |
 
 ### Editing
 
 | Keys | Action |
 |---|---|
-| `gcc` | Toggle line comment |
-| `gc` | Toggle selection comment (visual mode) |
-| `<Space>f` | Format buffer |
-| `<C-/>` (insert) | Trigger completion |
-| `<C-y>` (insert) | Accept completion |
+| `gcc` | Toggle line comment (Neovim built-in) |
+| `gc` (visual) | Toggle selection comment |
+| `<Space>f` | Format buffer (conform.nvim) |
+| `<C-y>` (insert) | Accept completion (blink.cmp) |
+| `<C-Space>` (insert) | Trigger completion menu |
+| `ysiw"` | Surround word with `"` (mini.surround) |
+| `ds"` | Delete surrounding `"` (mini.surround) |
+| `cs'"` | Change surrounding `'` to `"` (mini.surround) |
 
 ### Splits & navigation ⭐
 
 | Keys | Action |
 |---|---|
 | `<C-h>` `j` `k` `l` | Move between splits AND tmux panes |
-| `:split` / `:vsplit` | Open horizontal / vertical split |
-| `<Space>w` then `s`/`v` | Same, via which-key |
+| `:split` / `:vsplit` (or `:sp` / `:vs`) | Open horizontal / vertical split |
+| `<C-w>` then `s` / `v` | Split horizontal / vertical (no command) |
 | `<C-w>` then `=` | Equalize split sizes |
 | `<C-w>` then `o` | Close other splits |
+| `<C-w>` then `q` or `:close` | Close current split |
 
 ### Git (gitsigns)
 
@@ -159,11 +176,13 @@ prefix r          reload config
 
 # nvim
 <Space>sf         find file
-<Space>sg         grep
-<Space>e          file tree
-gd                go to definition
+<Space>sg         grep across project
+<Space><Space>    open buffers
+\                 reveal file in neo-tree
+grd               go to definition
 K                 docs under cursor
-<Space>rn         rename
+grn               rename symbol
+gra               code action
 gcc               comment line
 :w / :q           save / quit
 u                 undo
