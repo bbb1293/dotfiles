@@ -160,7 +160,7 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 
 ---
 
-## The 20 keys that cover 80% of usage
+## The 21 keys that cover 80% of usage
 
 ```
 # tmux
