@@ -45,12 +45,18 @@ cd ~/.tmux/plugins/tmux-thumbs && cargo build --release
 
 ### 5. Install Neovim plugins
 
-First launch of `nvim` auto-installs everything via `vim.pack.add`. Then:
+First launch of `nvim` auto-installs everything:
+- All plugins via `vim.pack.add` (kickstart base + custom)
+- Default LSPs via `mason-tool-installer`:
+  `pyright`, `ts_ls`, `bashls`, `jsonls`, `yamlls`, `marksman`, `lua_ls`
+- Formatters: `prettier`, `stylua`, `shfmt`
 
+Optionally pre-install Treesitter parsers for syntax highlighting:
 ```vim
 :TSInstall lua python javascript typescript json yaml markdown bash
-:Mason       " install language servers
 ```
+
+To add more LSPs later, either edit `nvim/init.lua` (the `servers` table) or run `:Mason` and press `i` on any package.
 
 ---
 
