@@ -16,6 +16,12 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 | `prefix o` | ⭐ **sessionx** — fuzzy switch session/window w/ previews |
 | `prefix d` | **Detach** (leave running — Claude Code keeps thinking) |
 | `prefix Tab` | Toggle to last session |
+| `prefix $` | Rename current session |
+| `prefix o` → `Alt+d` | ⭐ **Delete** highlighted session inside sessionx |
+| `prefix o` → `Alt+x` | Delete highlighted window inside sessionx |
+| `prefix :` `kill-session` | Kill the current session (in tmux command mode) |
+| `tmux kill-session -t NAME` | Kill one session by name (from shell) |
+| `tmux kill-server` | ☠️ Kill **all** sessions (use with care) |
 
 ### Windows (per Claude instance / per concern)
 
