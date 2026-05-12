@@ -27,6 +27,13 @@ require('neo-tree').setup {
     window = {
       mappings = {
         ['\\'] = 'close_window',
+        ['l']  = 'open',          -- vim-style expand folder / open file
+        ['h']  = 'close_node',    -- vim-style collapse folder
+        ['Y']  = function(state)  -- copy absolute path to system clipboard
+          local node = state.tree:get_node()
+          vim.fn.setreg('+', node.path)
+          vim.notify('Copied: ' .. node.path)
+        end,
       },
     },
   },

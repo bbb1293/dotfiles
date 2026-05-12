@@ -103,7 +103,7 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `<C-h>` / `<C-l>` | Focus tree / focus editor |
 | `<CR>` or `l` | Open file / expand folder |
 | `h` | Collapse folder (or jump to parent) |
-| `s` / `S` | Open file in **horizontal** / **vertical** split |
+| `s` / `S` | Open file in **vertical** / **horizontal** split (yes, this order — neo-tree default) |
 | `t` | Open in new tab |
 | `R` | Refresh tree |
 | `H` | Toggle hidden files (dotfiles) |
@@ -146,9 +146,9 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `<Space>f` | Format buffer (conform.nvim) |
 | `<C-y>` (insert) | Accept completion (blink.cmp) |
 | `<C-Space>` (insert) | Trigger completion menu |
-| `ysiw"` | Surround word with `"` (mini.surround) |
-| `ds"` | Delete surrounding `"` (mini.surround) |
-| `cs'"` | Change surrounding `'` to `"` (mini.surround) |
+| `saiw"` | **S**urround **a**dd: word with `"` (mini.surround — NOT vim-surround's `ysiw"`) |
+| `sd"` | **S**urround **d**elete: `"` |
+| `sr'"` | **S**urround **r**eplace: `'` with `"` |
 
 ### Splits & navigation ⭐
 
@@ -179,7 +179,7 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `:q` / `:wq` / `:q!` | Quit / save+quit / force quit |
 | `u` / `<C-r>` | Undo / redo |
 | `<Esc>` or `<C-[>` | Back to normal mode |
-| `<Space>th` | Toggle inlay hints |
+| `<Space>th` | Toggle inlay hints (only when LSP supports them, e.g. pyright, ts_ls, lua_ls) |
 
 ---
 
@@ -246,7 +246,7 @@ gO                document symbols (jump within file)
 <Space>sw         grep word under cursor
 <Space>/          fuzzy-find within current buffer
 <Space>f          format buffer (conform.nvim)
-ysiw" / ds"       surround/un-surround with " (mini.surround)
+saiw" / sd"       surround add/delete: word with " (mini.surround)
 
 # neo-tree, focused in tree (+2)
 s / S             open file in horizontal / vertical split
