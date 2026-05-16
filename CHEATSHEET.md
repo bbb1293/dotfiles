@@ -107,7 +107,9 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `\` (any buffer) | Toggle / reveal current file in tree |
 | `<C-h>` / `<C-l>` | Focus tree / focus editor |
 | `<CR>` or `l` | Open file / expand folder |
-| `h` | Collapse folder (or jump to parent) |
+| `h` | Collapse focused folder (no root change) |
+| `<BS>` | Move tree's **root UP** to parent folder |
+| `.` | Move tree's **root DOWN** to focused folder |
 | `s` / `S` | Open file in **vertical** / **horizontal** split (yes, this order — neo-tree default) |
 | `t` | Open in new tab |
 | `R` | Refresh tree |
