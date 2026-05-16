@@ -59,6 +59,19 @@ Optionally pre-install Treesitter parsers for syntax highlighting:
 
 To add more LSPs later, either edit `nvim/init.lua` (the `servers` table) or run `:Mason` and press `i` on any package.
 
+### 6. Install a Nerd Font + configure iTerm2
+
+Sessionx, neo-tree, and other plugins use Nerd Font glyphs for icons.
+
+```bash
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+In **iTerm2 → Settings → Profiles → Text**:
+
+- Set **Font** to `JetBrainsMono Nerd Font Mono`
+- **Uncheck "Use a different font for non-ASCII text."** Nerd Font glyphs live in Unicode's private-use area, which iTerm2 classifies as "non-ASCII" — if this box is checked, your non-ASCII font (often `Monaco`) gets used and the icons render as tofu boxes (`▯`).
+
 ---
 
 ## Layout
