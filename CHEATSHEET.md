@@ -3,6 +3,8 @@
 The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader for nvim = **`<Space>`**.
 
 > **`*` indicator (status bar & sessionx):** a window name shown as `foo*` is **alerted** — Claude rang the bell (waiting for input) or the window has been silent for ≥ 4s (likely idle/waiting). The flag clears the moment you visit that window. Idle shells will also show `*`; that's the trade-off for catching all waiting states.
+>
+> **Cross-session alerts:** flagged windows in *other* sessions appear on the right side of the status bar as `session:window*` in red (polled every 2s). Lets you catch Claude finishing in a session you're not currently attached to without having to open `prefix o`.
 
 ---
 

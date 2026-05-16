@@ -2,7 +2,8 @@
 
 Personal config for **tmux** + **Neovim**, optimized for parallel Claude Code sessions.
 
-- `tmux.conf` — tmux 3.6+ with 7 plugins (sessionx, resurrect/continuum, thumbs, …)
+- `tmux.conf` — tmux 3.6+ with 7 plugins (sessionx, resurrect/continuum, thumbs, …); status bar surfaces `*` alerts on idle/bell windows across all sessions
+- `scripts/` — small shell helpers invoked from `tmux.conf` (sessionx patch, cross-session alert poller)
 - `nvim/` — Neovim 0.12+ fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with vim-tmux-navigator
 
 See [CHEATSHEET.md](./CHEATSHEET.md) for the keys you'll actually use day-to-day.
