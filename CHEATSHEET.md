@@ -84,6 +84,7 @@ The keys you'll actually press every day. Prefix for tmux = **`Ctrl+a`**. Leader
 |---|---|
 | `<Space>sf` | **Search files** (fuzzy by name) |
 | `<Space>sg` | **Search by grep** (live ripgrep) |
+| `<C-Space>` (in `sg`) | ⭐ **Freeze results → fuzzy-filter by path + content** (IDE-style "find in folder"). Disable macOS Ctrl+Space input-switch first. |
 | `<Space>sw` | Search current word under cursor |
 | `<Space>/` | Fuzzy search in **current buffer** |
 | `<Space>s/` | Live grep across **open buffers** only |
