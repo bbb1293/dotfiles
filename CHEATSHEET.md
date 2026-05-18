@@ -168,8 +168,9 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `<C-w>` then `o` | Close other splits |
 | `<C-w>` then `q` or `:close` | Close current split |
 
-### Git (gitsigns)
+### Git
 
+**gitsigns (hunks)**
 | Keys | Action |
 |---|---|
 | `]c` / `[c` | Next / previous hunk |
@@ -177,6 +178,13 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `<Space>hr` | Reset hunk |
 | `<Space>hp` | Preview hunk |
 | `<Space>hb` | Blame line |
+
+**fugitive + rhubarb (GitHub)**
+| Keys | Action |
+|---|---|
+| `<Space>gb` | Open current file on GitHub (visual: with line range) |
+| `<Space>gy` | Yank GitHub URL to clipboard |
+| `:GBrowse` | Same as `<Space>gb`, runnable as a command |
 
 ### Misc essentials
 
