@@ -690,13 +690,16 @@ do
     -- Common LSPs auto-installed on first launch via mason-tool-installer.
     -- Uncomment / add others as needed.
     pyright   = {},  -- Python
+    ruff      = {},  -- Python linter + formatter
     ts_ls     = {},  -- TypeScript / JavaScript
     bashls    = { filetypes = { 'sh', 'bash', 'zsh' } },  -- Bash / shell (extended to zsh)
     jsonls    = {},  -- JSON
     yamlls    = {},  -- YAML
     marksman  = {},  -- Markdown
+    gopls     = {},  -- Go
+    jdtls     = {},  -- Java (bare; needs system JDK)
+    buf_ls    = {},  -- Protobuf (buf.build)
     -- clangd       = {},  -- C / C++
-    -- gopls        = {},  -- Go
     -- rust_analyzer = {}, -- Rust
 
     stylua = {}, -- Used to format Lua code
@@ -755,8 +758,11 @@ do
   -- You can press `g?` for help in this menu.
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
-    'prettier', -- formatter for JS/TS/JSON/YAML/Markdown/CSS/HTML
-    'shfmt',    -- formatter for shell scripts
+    'prettier',  -- formatter for JS/TS/JSON/YAML/Markdown/CSS/HTML
+    'shfmt',     -- formatter for shell scripts
+    'gofumpt',   -- formatter for Go (stricter gofmt)
+    'goimports', -- import organizer for Go
+    'buf',       -- formatter + linter for Protobuf
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
