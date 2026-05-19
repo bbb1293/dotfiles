@@ -49,8 +49,10 @@ cd ~/.tmux/plugins/tmux-thumbs && cargo build --release
 First launch of `nvim` auto-installs everything:
 - All plugins via `vim.pack.add` (kickstart base + custom)
 - Default LSPs via `mason-tool-installer`:
-  `pyright`, `ts_ls`, `bashls`, `jsonls`, `yamlls`, `marksman`, `lua_ls`
-- Formatters: `prettier`, `stylua`, `shfmt`
+  `pyright`, `ruff`, `ts_ls`, `bashls`, `jsonls`, `yamlls`, `marksman`, `lua_ls`, `gopls`, `jdtls`, `buf_ls`
+- Formatters: `prettier`, `stylua`, `shfmt`, `gofumpt`, `goimports`, `buf`
+
+Java additionally needs a system JDK: `brew install --cask temurin`.
 
 Optionally pre-install Treesitter parsers for syntax highlighting:
 ```vim

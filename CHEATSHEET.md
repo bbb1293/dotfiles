@@ -127,6 +127,10 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 
 ### LSP (after `:Mason` installs servers)
 
+**Auto-installed languages:** Lua, Python (pyright + ruff), TypeScript/JavaScript, Bash/Zsh, JSON, YAML, Markdown, Go, Java\*, Protobuf
+
+\*Java needs a system JDK — `brew install --cask temurin`.
+
 > Note: this kickstart uses Neovim 0.11+ `gr*` convention (not `<leader>r*`).
 
 | Keys | Action |
