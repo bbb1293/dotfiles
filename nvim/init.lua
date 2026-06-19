@@ -696,7 +696,15 @@ do
     jsonls    = {},  -- JSON
     yamlls    = {},  -- YAML
     marksman  = {},  -- Markdown
-    gopls     = {},  -- Go
+    gopls     = {  -- Go
+      settings = {
+        gopls = {
+          -- Offer completions for symbols in packages you haven't imported yet.
+          -- Accepting one inserts the import automatically.
+          completeUnimported = true,
+        },
+      },
+    },
     jdtls     = {},  -- Java (bare; needs system JDK)
     buf_ls    = {},  -- Protobuf (buf.build)
     -- clangd       = {},  -- C / C++
@@ -787,6 +795,7 @@ do
       local enabled_filetypes = {
         -- lua = true,
         -- python = true,
+        go = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
@@ -805,6 +814,7 @@ do
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      go = { 'goimports', 'gofumpt' },
     },
   }
 
