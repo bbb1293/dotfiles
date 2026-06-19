@@ -155,11 +155,28 @@ Auto-opens on the left at startup. Press `?` inside the tree to see every key.
 | `gcc` | Toggle line comment (Neovim built-in) |
 | `gc` (visual) | Toggle selection comment |
 | `<Space>f` | Format buffer (conform.nvim) |
-| `<C-y>` (insert) | Accept completion (blink.cmp) |
+| `<C-y>` (insert) | Accept completion (blink.cmp; auto-imports Go symbols from unimported packages) |
 | `<C-Space>` (insert) | Trigger completion menu |
 | `saiw"` | **S**urround **a**dd: word with `"` (mini.surround — NOT vim-surround's `ysiw"`) |
 | `sd"` | **S**urround **d**elete: `"` |
 | `sr'"` | **S**urround **r**eplace: `'` with `"` |
+
+> **Go auto-import:** `.go` files run `goimports` + `gofumpt` on save (adds missing imports, removes unused, formats). Accepting a `blink.cmp` completion for a symbol from an unimported package also inserts the import.
+
+### Claude Code (`<leader>a*`)
+
+Runs the `claude` CLI in a split with MCP integration so Claude can read/edit your open buffers and propose diffs you accept inside nvim. Requires the `claude` CLI on PATH.
+
+| Keys | Action |
+|---|---|
+| `<Space>ac` | Toggle Claude pane |
+| `<Space>af` | Focus Claude pane |
+| `<Space>ar` | Resume previous Claude session |
+| `<Space>aC` | Continue Claude session |
+| `<Space>ab` | Add current buffer to Claude's context |
+| `<Space>as` (visual) | Send selection to Claude |
+| `<Space>aa` | Accept proposed diff |
+| `<Space>ad` | Deny proposed diff |
 
 ### Splits & navigation ⭐
 

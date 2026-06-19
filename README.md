@@ -52,7 +52,11 @@ First launch of `nvim` auto-installs everything:
   `pyright`, `ruff`, `ts_ls`, `bashls`, `jsonls`, `yamlls`, `marksman`, `lua_ls`, `gopls`, `jdtls`, `buf_ls`
 - Formatters: `prettier`, `stylua`, `shfmt`, `gofumpt`, `goimports`, `buf`
 
+Go files run `goimports` + `gofumpt` on save, so imports for newly-used packages are added (and unused ones removed) automatically.
+
 Java additionally needs a system JDK: `brew install --cask temurin`.
+
+The Claude Code plugin (`<leader>a*` keymaps) shells out to the `claude` CLI — install it from <https://docs.claude.com/claude-code> if you want that integration.
 
 Optionally pre-install Treesitter parsers for syntax highlighting:
 ```vim
