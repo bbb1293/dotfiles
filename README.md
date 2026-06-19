@@ -15,7 +15,7 @@ See [CHEATSHEET.md](./CHEATSHEET.md) for the keys you'll actually use day-to-day
 ### 1. Prerequisites (Homebrew)
 
 ```bash
-brew install tmux neovim fzf bat ripgrep fd zoxide rust tree-sitter
+brew install tmux neovim fzf bat ripgrep fd zoxide rust go tree-sitter
 npm install -g tree-sitter-cli
 ```
 
